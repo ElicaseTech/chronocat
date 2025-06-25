@@ -85,7 +85,6 @@ jobs:
         run: |
           mkdir -p build/dist/iife-ti
           echo "$TI_KEY" > $RUNNER_TEMP/ti.pem
-          cat -A $RUNNER_TEMP/ti.pem
           openssl dgst -sha256 -sign $RUNNER_TEMP/ti.pem -keyform PEM -out build/dist/iife-ti/chronocat.js.ti.bin -binary build/dist/iife/chronocat.js
           rm $RUNNER_TEMP/ti.pem
           cat build/dist/iife/chronocat.js >> build/dist/iife-ti/chronocat.js.ti.bin
